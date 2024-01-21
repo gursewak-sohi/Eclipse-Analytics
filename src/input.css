@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200;6..72,300;6..72,400;6..72,500&display=swap');
+
+@font-face {
+  font-family: 'Forma DJR Display';
+  src: url('../fonts/forma-djr/FormaDJRDisplay-Regular-Testing.woff2') format('woff2'),
+      url('../fonts/forma-djr/FormaDJRDisplay-Regular-Testing.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Forma DJR Display';
+  src: url('../fonts/forma-djr/FormaDJRDisplay-Bold-Testing.woff2') format('woff2'),
+      url('../fonts/forma-djr/FormaDJRDisplay-Bold-Testing.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.member-image {
+  @apply opacity-50 duration-200 w-full h-full object-cover
+}
+
+.swiper-slide-active .member-image {
+  @apply opacity-100 scale-125
+}
+
+.content {
+  @apply hidden opacity-0 
+}
+
+.content.active {
+  @apply block opacity-100
+}
