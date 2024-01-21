@@ -74,7 +74,7 @@
 
       var baseSpeed = smWidth ? 30 : 60; // pixels per second
 
-      document.fonts.ready.then(function () {
+      window.onload = function() {
         var lines = document.querySelectorAll('.line-animation');
         lines.forEach(function(line, lineIndex) {
             var h3Elements = line.querySelectorAll('h3');
@@ -92,7 +92,7 @@
                 h3.style.animation = `${animationName} ${duration}s linear ${index === 0 ? `-${duration}s` : `-${duration / 2}s`} infinite`;
             });
         });
-      });
+      };
       
       function createKeyframes(name, width, index, isReverse) {
         var keyframes;
