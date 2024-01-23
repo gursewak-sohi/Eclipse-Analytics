@@ -5,10 +5,10 @@
     body.classList.add('js-loaded');
 
      // gsap animations
-     gsap.registerPlugin(ScrollSmoother);
+     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
      let smWidth;
-    screen.width < 1024
+     screen.width < 1024
         ? smWidth = true
         : smWidth = false;
 
@@ -37,7 +37,7 @@
       }
 
 
-    // Meet Swiper
+      // Meet Swiper
       const meetSwiper = document.querySelector("#meetSwiper");
       if (meetSwiper) {
           const swiper = new Swiper('#meetSwiper', {
@@ -72,79 +72,26 @@
           });
       }
 
-      var baseSpeed = smWidth ? 30 : 60; // pixels per second
 
-      window.onload = function() {
-        var lines = document.querySelectorAll('.line-animation');
+    //  Scroll Animation
+    var lines = document.querySelectorAll('.line-animation');
+    if (lines.length > 0) {
         lines.forEach(function(line, lineIndex) {
-            var h3Elements = line.querySelectorAll('h3');
             var isReverse = line.classList.contains('reverse');
-
-            // Use the width of the first h3 as the reference for duration calculation
-            var referenceWidth = h3Elements[0].getBoundingClientRect().width;
-            var duration = referenceWidth / baseSpeed; // Duration based on the first h3 width
-
-            h3Elements.forEach(function(h3, index) {
-                var width = h3.getBoundingClientRect().width;
-                var animationName = `red-scroll-${lineIndex}-${index}-${isReverse ? 'reverse' : 'forward'}`;
-
-                createKeyframes(animationName, width, index, isReverse);
-                h3.style.animation = `${animationName} ${duration}s linear ${index === 0 ? `-${duration}s` : `-${duration / 2}s`} infinite`;
+            var width = line.offsetWidth; // Total width of the line container
+            var xValue = isReverse ? width : -width; // Determine direction based on 'reverse' class
+    
+            gsap.to(line, {
+                x: xValue,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: line,
+                    start: "top bottom", // Adjust these values based on when you want the animation to start and end
+                    end: "bottom top",
+                    scrub: true,
+                }
             });
         });
-      };
-      
-      function createKeyframes(name, width, index, isReverse) {
-        var keyframes;
-
-        if (isReverse) {
-            if (index === 0) {
-                keyframes = `
-                    @keyframes ${name} {
-                        0% { transform: translateX(-${width}px); }
-                        to { transform: translateX(${width}px); }
-                    }
-                `;
-            } else {
-                keyframes = `
-                    @keyframes ${name} {
-                        0% { transform: translateX(-${2 * width}px); }
-                        to { transform: translateX(0); }
-                    }
-                `;
-            }
-        } else {
-            if (index === 0) {
-                keyframes = `
-                    @keyframes ${name} {
-                        0% { transform: translateX(${width}px); }
-                        to { transform: translateX(-${width}px); }
-                    }
-                `;
-            } else {
-                keyframes = `
-                    @keyframes ${name} {
-                        0% { transform: translateX(0); }
-                        to { transform: translateX(-${2 * width}px); }
-                    }
-                `;
-            }
-        }
-
-          dynamicStyleSheet.insertRule(keyframes, dynamicStyleSheet.cssRules.length);
-      }
-  
-
-
-      function createStyleElement() {
-        var style = document.createElement('style');
-        style.type = 'text/css';
-        document.head.appendChild(style);
-        return style.sheet;
     }
-
-    var dynamicStyleSheet = createStyleElement();
-
-  
 
 })();
