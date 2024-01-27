@@ -74,7 +74,7 @@
 
 
     //  Scroll Animation
-    var lines = document.querySelectorAll('.line-animation');
+    let lines = document.querySelectorAll('.line-animation');
     if (lines.length > 0) {
         lines.forEach(function(line, lineIndex) {
             var isReverse = line.classList.contains('reverse');
@@ -86,12 +86,43 @@
                 ease: "none",
                 scrollTrigger: {
                     trigger: line,
-                    start: "top bottom", // Adjust these values based on when you want the animation to start and end
+                    start: "top bottom",  
                     end: "bottom top",
                     scrub: true,
                 }
             });
         });
     }
+
+    // Hover on SVG
+    let hoverTarget = document.querySelectorAll('.hover-target');
+    if (hoverTarget.length > 0) { 
+        hoverTarget.forEach(item => {
+            item.addEventListener('mouseover', event => {
+                const tooltip = document.querySelector('.tooltip');
+                tooltip.textContent = event.target.getAttribute('data-tooltip');
+        
+                const svgElement = document.querySelector('.svg-container svg');
+                const bbox = event.target.getBBox();
+        
+                // Calculate the scale factor
+                const scaleFactor = svgElement.clientWidth / svgElement.viewBox.baseVal.width;
+        
+                // Apply the scale factor to the tooltip's position
+                tooltip.style.left = `${(bbox.x + (bbox.width / 2)) * scaleFactor}px`;
+                tooltip.style.top = `${bbox.y * scaleFactor}px`;
+        
+                tooltip.classList.remove('-translate-x-2', 'opacity-0');
+                tooltip.classList.add('translate-x-0', 'opacity-100');
+            });
+        
+            item.addEventListener('mouseout', () => {
+                const tooltip = document.querySelector('.tooltip');
+                tooltip.classList.remove('translate-x-0', 'opacity-100');
+                tooltip.classList.add('-translate-x-2', 'opacity-0');            
+            });
+        });
+    }
+    
 
 })();

@@ -21,6 +21,7 @@ module.exports = {
                 800: '#003330', //green
             },
             'dark': {
+                100: '#F8F8F8',
                 200: '#D6D6D6',
                 300: '#F4F4F4',
                 400: '#D9DAD9',
@@ -29,7 +30,9 @@ module.exports = {
         },
     },
 },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
  
 
