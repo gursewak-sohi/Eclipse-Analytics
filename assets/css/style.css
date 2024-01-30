@@ -1843,6 +1843,10 @@ video {
   max-width: 655px;
 }
 
+.max-w-full{
+  max-width: 100%;
+}
+
 .flex-1{
   flex: 1 1 0%;
 }
@@ -2462,10 +2466,6 @@ video {
 
 .gap-8{
   gap: 2rem;
-}
-
-.gap-9{
-  gap: 2.25rem;
 }
 
 .gap-x-5{
@@ -3157,19 +3157,14 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.py-2{
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
 .py-14{
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
 }
 
-.py-16{
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+.py-2{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .pb-0{
@@ -3204,12 +3199,12 @@ video {
   padding-bottom: 1.75rem;
 }
 
-.pl-0{
-  padding-left: 0px;
+.pb-9{
+  padding-bottom: 2.25rem;
 }
 
-.pl-4{
-  padding-left: 1rem;
+.pl-0{
+  padding-left: 0px;
 }
 
 .pl-6{
@@ -3240,6 +3235,10 @@ video {
   padding-top: 3.5rem;
 }
 
+.pt-16{
+  padding-top: 4rem;
+}
+
 .pt-3{
   padding-top: 0.75rem;
 }
@@ -3250,22 +3249,6 @@ video {
 
 .pt-9{
   padding-top: 2.25rem;
-}
-
-.pb-9{
-  padding-bottom: 2.25rem;
-}
-
-.pb-8{
-  padding-bottom: 2rem;
-}
-
-.pt-16{
-  padding-top: 4rem;
-}
-
-.pb-2{
-  padding-bottom: 0.5rem;
 }
 
 .text-left{
@@ -3350,6 +3333,10 @@ video {
   font-size: 18px;
 }
 
+.text-\[22px\]{
+  font-size: 22px;
+}
+
 .text-\[26px\]{
   font-size: 26px;
 }
@@ -3384,10 +3371,6 @@ video {
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-\[22px\]{
-  font-size: 22px;
 }
 
 .font-bold{
@@ -3482,6 +3465,10 @@ video {
   line-height: 1.25rem;
 }
 
+.leading-6{
+  line-height: 1.5rem;
+}
+
 .leading-8{
   line-height: 2rem;
 }
@@ -3496,10 +3483,6 @@ video {
 
 .leading-none{
   line-height: 1;
-}
-
-.leading-6{
-  line-height: 1.5rem;
 }
 
 .tracking-\[-0\.48px\]{
@@ -5605,26 +5588,17 @@ video {
   line-height: 1.75rem;
 }
 
-.prose-p\:mt-5 :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))){
-  margin-top: 1.25rem;
-}
-
 .prose-p\:mt-4 :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))){
   margin-top: 1rem;
 }
 
-.prose-p\:text-2xl :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))){
-  font-size: 1.5rem;
-  line-height: 2rem;
+.prose-p\:text-lg :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))){
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .prose-p\:text-xl :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))){
   font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.prose-p\:text-lg :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))){
-  font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
@@ -5636,12 +5610,12 @@ video {
   line-height: 22px;
 }
 
-.prose-p\:tracking-\[1px\] :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))){
-  letter-spacing: 1px;
-}
-
 .prose-p\:tracking-\[0\.9px\] :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))){
   letter-spacing: 0.9px;
+}
+
+.prose-p\:tracking-\[1px\] :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))){
+  letter-spacing: 1px;
 }
 
 .prose-p\:text-gray-700 :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))){
@@ -5699,12 +5673,12 @@ video {
   list-style-type: disc;
 }
 
-.prose-ul\:pl-8 :is(:where(ul):not(:where([class~="not-prose"],[class~="not-prose"] *))){
-  padding-left: 2rem;
-}
-
 .prose-ul\:pl-6 :is(:where(ul):not(:where([class~="not-prose"],[class~="not-prose"] *))){
   padding-left: 1.5rem;
+}
+
+.prose-ul\:pl-8 :is(:where(ul):not(:where([class~="not-prose"],[class~="not-prose"] *))){
+  padding-left: 2rem;
 }
 
 .prose-ul\:text-lg :is(:where(ul):not(:where([class~="not-prose"],[class~="not-prose"] *))){
@@ -6132,34 +6106,12 @@ video {
     line-height: 2rem;
   }
 
-  .lg\:prose-p\:leading-6 :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))){
-    line-height: 1.5rem;
-  }
-
   .lg\:prose-p\:tracking-\[1\.2px\] :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))){
     letter-spacing: 1.2px;
   }
 
   .lg\:prose-p\:tracking-\[1\.7px\] :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))){
     letter-spacing: 1.7px;
-  }
-
-  .lg\:prose-a\:border-brown-800 :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))){
-    --tw-border-opacity: 1;
-    border-color: rgb(157 95 38 / var(--tw-border-opacity));
-  }
-
-  .lg\:prose-a\:text-brown-800 :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))){
-    --tw-text-opacity: 1;
-    color: rgb(157 95 38 / var(--tw-text-opacity));
-  }
-
-  .lg\:prose-a\:underline :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))){
-    text-decoration-line: underline;
-  }
-
-  .lg\:prose-ul\:list-disc :is(:where(ul):not(:where([class~="not-prose"],[class~="not-prose"] *))){
-    list-style-type: disc;
   }
 
   .lg\:prose-ul\:pl-8 :is(:where(ul):not(:where([class~="not-prose"],[class~="not-prose"] *))){
@@ -6187,6 +6139,10 @@ video {
 
   .xl\:flex{
     display: flex;
+  }
+
+  .xl\:pb-44{
+    padding-bottom: 11rem;
   }
 
   .xl\:text-\[129px\]{
@@ -6220,17 +6176,16 @@ video {
     padding-right: 5rem;
   }
 
-  .\32xl\:px-24{
-    padding-left: 6rem;
-    padding-right: 6rem;
-  }
-
   .\32xl\:pl-14{
     padding-left: 3.5rem;
   }
 
   .\32xl\:pl-16{
     padding-left: 4rem;
+  }
+
+  .\32xl\:pl-20{
+    padding-left: 5rem;
   }
 
   .\32xl\:pl-24{
@@ -6261,8 +6216,8 @@ video {
     padding-right: 7rem;
   }
 
-  .\32xl\:pl-20{
-    padding-left: 5rem;
+  .\32xl\:pb-52{
+    padding-bottom: 13rem;
   }
 }
 
