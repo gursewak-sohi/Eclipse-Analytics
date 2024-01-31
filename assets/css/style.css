@@ -1484,6 +1484,14 @@ video {
   right: 0px;
 }
 
+.bottom-0{
+  bottom: 0px;
+}
+
+.top-0{
+  top: 0px;
+}
+
 .isolate{
   isolation: isolate;
 }
@@ -1773,6 +1781,10 @@ video {
 
 .h-full{
   height: 100%;
+}
+
+.h-px{
+  height: 1px;
 }
 
 .w-14{
@@ -6176,6 +6188,10 @@ video {
     padding-right: 5rem;
   }
 
+  .\32xl\:pb-52{
+    padding-bottom: 13rem;
+  }
+
   .\32xl\:pl-14{
     padding-left: 3.5rem;
   }
@@ -6214,10 +6230,6 @@ video {
 
   .\32xl\:pr-28{
     padding-right: 7rem;
-  }
-
-  .\32xl\:pb-52{
-    padding-bottom: 13rem;
   }
 }
 
