@@ -1468,6 +1468,10 @@ video {
   top: -9rem;
 }
 
+.bottom-0{
+  bottom: 0px;
+}
+
 .bottom-7{
   bottom: 1.75rem;
 }
@@ -1482,14 +1486,6 @@ video {
 
 .right-0{
   right: 0px;
-}
-
-.bottom-0{
-  bottom: 0px;
-}
-
-.top-0{
-  top: 0px;
 }
 
 .isolate{
@@ -5969,10 +5965,6 @@ video {
     padding-left: 2rem;
   }
 
-  .lg\:pr-10{
-    padding-right: 2.5rem;
-  }
-
   .lg\:pr-12{
     padding-right: 3rem;
   }
@@ -6196,10 +6188,6 @@ video {
     padding-left: 3.5rem;
   }
 
-  .\32xl\:pl-16{
-    padding-left: 4rem;
-  }
-
   .\32xl\:pl-20{
     padding-left: 5rem;
   }
@@ -6218,10 +6206,6 @@ video {
 
   .\32xl\:pr-16{
     padding-right: 4rem;
-  }
-
-  .\32xl\:pr-20{
-    padding-right: 5rem;
   }
 
   .\32xl\:pr-24{
